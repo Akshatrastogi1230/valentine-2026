@@ -1,6 +1,6 @@
 // --- CONFIGURATION ---
 // Replace the link below with your favorite YouTube song link!
-const mySongLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+const mySongLink = "https://www.youtube.com/watch?v=0JLRExeOH-k";
 
 function showError() {
     document.getElementById('proposal-screen').classList.add('hidden');
@@ -83,3 +83,4 @@ function createConfetti() {
         setTimeout(() => heart.remove(), 5000);
     }
 }
+
