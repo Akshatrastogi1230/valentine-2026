@@ -35,7 +35,8 @@ function revealGift(type) {
         display.innerHTML = `
             <h3>A song for you</h3>
             <p>Scan the QR code!</p>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=YOUR_SONG_LINK_HERE" alt="QR Code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/watch?v=0JLRExeOH-k" alt="QR Code">
         `;
     }
 }
+
