@@ -1,6 +1,4 @@
-// --- CONFIGURATION ---
-// Replace the link below with your favorite YouTube song link!
-const mySongLink = "https://www.youtube.com/watch?v=0JLRExeOH-k";
+const mySongLink = "https://www.youtube.com/watch?v=3YO3AvlTdw0";
 
 function showError() {
     document.getElementById('proposal-screen').classList.add('hidden');
@@ -10,60 +8,35 @@ function showError() {
 function backToProposal() {
     document.getElementById('error-screen').classList.add('hidden');
     document.getElementById('proposal-screen').classList.remove('hidden');
-    
-    // Now the No button will run away when hovered
-    const noBtn = document.getElementById('no-btn');
-    noBtn.onmouseover = moveButton;
+    document.getElementById('no-btn').onmouseover = moveButton;
 }
 
 function moveButton() {
-    const x = Math.random() * (window.innerWidth - 150);
-    const y = Math.random() * (window.innerHeight - 150);
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
     const btn = document.getElementById('no-btn');
     btn.style.position = 'fixed';
-    btn.style.left = `${x}px`;
-    btn.style.top = `${y}px`;
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
 }
 
 function showGifts() {
-    const music = document.getElementById('valentine-music');
-    music.play();
-    
     document.getElementById('proposal-screen').classList.add('hidden');
     document.getElementById('gift-screen').classList.remove('hidden');
-    createConfetti();
 }
 
 function revealGift(type) {
     document.getElementById('gift-selection').classList.add('hidden');
     document.getElementById('gift-header').classList.add('hidden');
-    
-    const contentArea = document.getElementById('gift-content');
+    document.getElementById('gift-content').classList.remove('hidden');
     const display = document.getElementById('gift-display');
-    contentArea.classList.remove('hidden');
 
     if (type === 'bouquet') {
-        if (type === 'bouquet') {
-   display.innerHTML = `
-    <h2>Your Rose Bouquet 🌹</h2>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjJpZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v4aP8z9I_D9C/giphy.gif" alt="Roses">
-    <p>I will always love you no matter what.</p>
-`;
+        display.innerHTML = "<h2>Roses for You 🌹</h2><img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjJpZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v4aP8z9I_D9C/giphy.gif' style='width:100%'>";
     } else if (type === 'letter') {
-display.innerHTML = `
-    <div style="background: #fffafb; padding: 15px; border-radius: 10px; text-align: left;">
-        <h2 style="text-align: center;">Words from My Heart</h2>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZqeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" style="width:120px; display:block; margin:auto;">
-        <p>To the love of my life...</p>
-        <p>You make my life so meaningful. Always, Forever.</p>
-    </div>
-`;
+        display.innerHTML = "<h2>My Heart 💌</h2><p>You're my favorite person. Always, forever.</p>";
     } else if (type === 'song') {
-        display.innerHTML = `
-            <h2>A Song For You 🎵</h2>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${mySongLink}">
-            <p>Scan the code to hear how I feel!</p>
-        `;
+        display.innerHTML = "<h2>Our Song 🎵</h2><img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + mySongLink + "'>";
     }
 }
 
@@ -72,19 +45,3 @@ function closeGift() {
     document.getElementById('gift-selection').classList.remove('hidden');
     document.getElementById('gift-header').classList.remove('hidden');
 }
-
-function createConfetti() {
-    for (let i = 0; i < 30; i++) {
-        const heart = document.createElement('div');
-        heart.innerHTML = '❤️';
-        heart.className = 'confetti';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 5000);
-    }
-}
-
-
-
-
