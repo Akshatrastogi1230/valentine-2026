@@ -43,11 +43,12 @@ function revealGift(type) {
     contentArea.classList.remove('hidden');
 
     if (type === 'bouquet') {
-        display.innerHTML = `
-            <h2>Your Rose Bouquet 🌹</h2>
-            <img src="https://images.unsplash.com/photo-1561131245-c9e7c76a1ec3?q=80&w=500">
-            <p>I will always love you no matter what.</p>
-        `;
+        if (type === 'bouquet') {
+    display.innerHTML = `
+        <h2>Your Rose Bouquet 🌹</h2>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjJpZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v4aP8z9I_D9C/giphy.gif" alt="Roses">
+        <p>I will always love you no matter what.</p>
+    `;
     } else if (type === 'letter') {
         display.innerHTML = `
             <div style="background: #fffafb; padding: 15px; border-radius: 10px; text-align: left;">
@@ -83,4 +84,5 @@ function createConfetti() {
         setTimeout(() => heart.remove(), 5000);
     }
 }
+
 
