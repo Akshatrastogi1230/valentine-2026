@@ -10,7 +10,7 @@
     <div id="container">
         <div id="proposal-screen">
             <div class="heart-decor">💖</div>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNqZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1z/v4aP8z9I_D9C/giphy.gif" alt="Cute Cat" class="main-gif">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNqZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6JmVwPXYxX2ludGVybmFs_ieV9pZCZjdD1z/v4aP8z9I_D9C/giphy.gif" alt="Cute Cat" class="main-gif">
             <h1>Will you be my Valentine?</h1>
             <div class="buttons">
                 <button id="yes-btn" onclick="showGifts()">YES OF COURSE</button>
@@ -19,7 +19,7 @@
         </div>
 
         <div id="error-screen" class="hidden">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRma3NqdGZqZnd4eGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jUwpNzg9IcyrK/giphy.gif" alt="Sad" style="width:120px;">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRma3NqdGZqZnd4eGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jUwpNzg9IcyrK/giphy.gif" style="width:120px;">
             <h2 style="color: #ff4081;">Try again please :(</h2>
             <button onclick="backToProposal()">Try Again</button>
         </div>
@@ -31,18 +31,12 @@
                 <button class="gift-box" onclick="revealGift('letter')">Gift 2</button>
                 <button class="gift-box" onclick="revealGift('song')">Gift 3</button>
             </div>
-
             <div id="gift-content" class="hidden">
                 <div id="gift-display" class="slide-in"></div>
                 <button onclick="closeGift()" class="back-btn">← Back to Gifts</button>
             </div>
         </div>
     </div>
-
-    <audio id="valentine-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
-
     <script src="script.js"></script>
 </body>
 </html>
-
-
