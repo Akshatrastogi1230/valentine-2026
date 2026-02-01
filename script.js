@@ -1,27 +1,85 @@
+// --- CONFIGURATION ---
+// Replace the link below with your favorite YouTube song link!
+const mySongLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
+function showError() {
+    document.getElementById('proposal-screen').classList.add('hidden');
+    document.getElementById('error-screen').classList.remove('hidden');
+}
+
+function backToProposal() {
+    document.getElementById('error-screen').classList.add('hidden');
+    document.getElementById('proposal-screen').classList.remove('hidden');
+    
+    // Now the No button will run away when hovered
+    const noBtn = document.getElementById('no-btn');
+    noBtn.onmouseover = moveButton;
+}
+
 function moveButton() {
     const x = Math.random() * (window.innerWidth - 150);
     const y = Math.random() * (window.innerHeight - 150);
     const btn = document.getElementById('no-btn');
-    btn.style.position = 'fixed'; // Makes it jump around the whole screen
+    btn.style.position = 'fixed';
     btn.style.left = `${x}px`;
     btn.style.top = `${y}px`;
 }
 
 function showGifts() {
+    const music = document.getElementById('valentine-music');
+    music.play();
+    
     document.getElementById('proposal-screen').classList.add('hidden');
     document.getElementById('gift-screen').classList.remove('hidden');
+    createConfetti();
 }
 
 function revealGift(type) {
+    document.getElementById('gift-selection').classList.add('hidden');
+    document.getElementById('gift-header').classList.add('hidden');
+    
+    const contentArea = document.getElementById('gift-content');
     const display = document.getElementById('gift-display');
+    contentArea.classList.remove('hidden');
+
     if (type === 'bouquet') {
-        display.innerHTML = "<h3>Your Rose Bouquet 🌹</h3><p>I will always love you no matter what.</p>";
+        display.innerHTML = `
+            <h2>Your Rose Bouquet 🌹</h2>
+            <img src="https://images.unsplash.com/photo-1561131245-c9e7c76a1ec3?q=80&w=500">
+            <p>I will always love you no matter what.</p>
+        `;
     } else if (type === 'letter') {
-        display.innerHTML = "<h3>Words from My Heart 💌</h3><p style='font-size: 0.8rem;'>To the love of my life, you make my life so meaningful and I am so lucky to have you... Always, Forever.</p>";
+        display.innerHTML = `
+            <div style="background: #fffafb; padding: 15px; border-radius: 10px; text-align: left;">
+                <h2 style="text-align: center;">Words from My Heart</h2>
+                <p>To the love of my life,</p>
+                <p>You make my life so meaningful and I am so lucky to have you. Always, Forever.</p>
+                <p style="text-align: right;">XOXO</p>
+            </div>
+        `;
     } else if (type === 'song') {
-        // Replace the link below with your actual YouTube song link!
-        const mySong = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; 
-        display.innerHTML = `<h3>A song for you 🎵</h3><p>Scan the code!</p>
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${mySong}">`;
+        display.innerHTML = `
+            <h2>A Song For You 🎵</h2>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${mySongLink}">
+            <p>Scan the code to hear how I feel!</p>
+        `;
+    }
+}
+
+function closeGift() {
+    document.getElementById('gift-content').classList.add('hidden');
+    document.getElementById('gift-selection').classList.remove('hidden');
+    document.getElementById('gift-header').classList.remove('hidden');
+}
+
+function createConfetti() {
+    for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.className = 'confetti';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
     }
 }
