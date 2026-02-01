@@ -44,21 +44,20 @@ function revealGift(type) {
 
     if (type === 'bouquet') {
         if (type === 'bouquet') {
-    display.innerHTML = `
-        <h2>Your Rose Bouquet 🌹</h2>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjJpZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v4aP8z9I_D9C/giphy.gif" alt="Roses">
-        <p>I will always love you no matter what.</p>
-    `;
+   display.innerHTML = `
+    <h2>Your Rose Bouquet 🌹</h2>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z0bjJpZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v4aP8z9I_D9C/giphy.gif" alt="Roses">
+    <p>I will always love you no matter what.</p>
+`;
     } else if (type === 'letter') {
-      display.innerHTML = `
-        <div style="background: #fffafb; padding: 15px; border-radius: 10px; text-align: left;">
-            <h2 style="text-align: center;">Words from My Heart</h2>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZqeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" style="width:100px; display:block; margin:auto;">
-            <p>To the love of my life,</p>
-            <p>You make my life so meaningful and I am so lucky to have you. Always, Forever.</p>
-            <p style="text-align: right;">XOXO</p>
-        </div>
-    `;
+display.innerHTML = `
+    <div style="background: #fffafb; padding: 15px; border-radius: 10px; text-align: left;">
+        <h2 style="text-align: center;">Words from My Heart</h2>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZqeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" style="width:120px; display:block; margin:auto;">
+        <p>To the love of my life...</p>
+        <p>You make my life so meaningful. Always, Forever.</p>
+    </div>
+`;
     } else if (type === 'song') {
         display.innerHTML = `
             <h2>A Song For You 🎵</h2>
@@ -85,6 +84,7 @@ function createConfetti() {
         setTimeout(() => heart.remove(), 5000);
     }
 }
+
 
 
 
