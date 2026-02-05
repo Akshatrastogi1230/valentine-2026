@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
+    <title>Be My Valentine 💖</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <body>
+    <div class="hearts"></div>
+
     <div id="container">
-        <div id="proposal-screen">
+        <!-- Proposal -->
+        <div id="proposal-screen" class="screen active">
             <div class="heart-decor">💖</div>
-            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNqZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6JmVwPXYxX2ludGVybmFs_ieV9pZCZjdD1z/v4aP8z9I_D9C/giphy.gif" alt="Cute Cat" class="main-gif">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNqZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6JmVwPXYxX2ludGVybmFs_ieV9pZCZjdD1z/giphy.gif" class="main-gif">
             <h1>Will you be my Valentine?</h1>
+
             <div class="buttons">
-                <button id="yes-btn" onclick="showGifts()">YES OF COURSE</button>
-                <button id="no-btn" onclick="showError()">NO THANK YOU</button>
+                <button class="yes" onclick="showGifts()">YES 💕</button>
+                <button class="no" id="no-btn" onmouseover="moveButton()">NO 😢</button>
             </div>
         </div>
 
-        <div id="error-screen" class="hidden">
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGRma3NqdGZqZnd4eGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeGZ6ZzRyeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/jUwpNzg9IcyrK/giphy.gif" style="width:120px;">
-            <h2 style="color: #ff4081;">Try again please :(</h2>
-            <button onclick="backToProposal()">Try Again</button>
+        <!-- Error -->
+        <div id="error-screen" class="screen">
+            <img src="https://media.giphy.com/media/jUwpNzg9IcyrK/giphy.gif" width="120">
+            <h2>Try again please 🥺</h2>
+            <button onclick="backToProposal()">Okay 💗</button>
         </div>
 
-        <div id="gift-screen" class="hidden">
-            <h1 id="gift-header">Yay, you said yes!</h1>
+        <!-- Gifts -->
+        <div id="gift-screen" class="screen">
+            <h1>Yay! 💕</h1>
+
             <div id="gift-selection" class="gift-container">
-                <button class="gift-box" onclick="revealGift('bouquet')">Gift 1</button>
-                <button class="gift-box" onclick="revealGift('letter')">Gift 2</button>
-                <button class="gift-box" onclick="revealGift('song')">Gift 3</button>
+                <button onclick="revealGift('bouquet')">🌹 Gift 1</button>
+                <button onclick="revealGift('letter')">💌 Gift 2</button>
+                <button onclick="revealGift('song')">🎵 Gift 3</button>
             </div>
+
             <div id="gift-content" class="hidden">
-                <div id="gift-display" class="slide-in"></div>
-                <button onclick="closeGift()" class="back-btn">← Back to Gifts</button>
+                <div id="gift-display"></div>
+                <button class="back-btn" onclick="closeGift()">← Back</button>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
-    
 </html>
-
