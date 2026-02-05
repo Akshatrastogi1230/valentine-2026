@@ -1,4 +1,4 @@
-const mySongLink = "https://www.youtube.com/watch?v=3YO3AvlTdw0";
+const mySongLink = "https://www.youtube.com/watch?v=e1mOmdykmwI";
 
 function switchScreen(showId) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -55,3 +55,4 @@ function closeGift() {
     document.getElementById("gift-content").classList.add("hidden");
     document.getElementById("gift-selection").classList.remove("hidden");
 }
+
